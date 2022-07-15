@@ -500,6 +500,31 @@ body {
   margin: 0 auto;
 }
 
+.wrapper-lg {
+  max-width: 1262px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 42px;
+  color: #102746;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.section-title::after {
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: '';
+  width: 253px;
+  height: 3px;
+  background-color: #006DFE;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -680,4 +705,104 @@ body {
 .benefits__card-link:hover,
 .benefits__card-link:focus {
   background: url(../img/svg/arrow-right.svg) no-repeat right center;
+}
+
+.places {
+  margin-bottom: 131px;
+}
+
+.places__caption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 36px;
+}
+
+.places__title {
+  margin-right: 15px;
+}
+
+.places__view-all {
+  font-size: 16px;
+  line-height: 24px;
+  color: #006DFE;
+  text-decoration: none;
+  padding-right: 59px;
+  background: url(../img/svg/arrow-right.svg) no-repeat 95% center;
+  transition: all .2s;
+}
+
+.places__view-all:hover,
+.places__view-all:focus {
+  background: url(../img/svg/arrow-right.svg) no-repeat right center;
+}
+
+.places__cards {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+
+.places__card {
+  position: relative;
+}
+
+.places__card:hover .places__card-pic {
+  transform: scale(1.05);
+}
+
+.places__card::after {
+  display: block;
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(21, 24, 36, 0.4);
+}
+
+.places__card--large {
+  grid-column: span 3;
+  overflow: hidden;
+}
+
+.places__card--small {
+  grid-column: span 2;
+  overflow: hidden;
+}
+
+.places__card-title {
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 60px;
+  color: #FFFFFF;
+  position: absolute;
+  left: 29px;
+  bottom: 27px;
+  z-index: 3;
+}
+
+.places__card-pic {
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.2s;
+}
+
+.places__card-pic--lg {
+  height: 354px;
+}
+
+.places__card-pic--sm {
+  height: 283px;
+}
+
+.places__card-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
 }
