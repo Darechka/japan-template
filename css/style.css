@@ -530,6 +530,13 @@ body {
   top: 0;
   left: 0;
   width: 100%;
+  padding-bottom: 20px; /*для того чтобы лучше смотрелся полсе примения js-срипта*/
+  transition: .2s linear;
+  z-index: 999; /*чтобы не прятался за блоки, у которых z-index > 0*/
+}
+
+.header_active {
+  background: rgba(14, 29, 40, 0.9);
 }
 
 .header__wrapper {
@@ -936,4 +943,26 @@ body {
 .top__card-btn:focus,
 .top__card-btn:active {
   background: #1167d8;
+}
+
+.videos {
+  width: 100%;
+}
+
+.videos__wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.videos__item {
+  padding-top: 56.25%;
+}
+
+.videos__element {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
 }
