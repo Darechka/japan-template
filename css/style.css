@@ -536,7 +536,7 @@ body {
 }
 
 .header_active {
-  background: rgba(14, 29, 40, 0.9);
+  background: #0E1D28;
 }
 
 .header__wrapper {
@@ -964,5 +964,45 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
+}
 
+.footer {
+  background: #0E1D28;
+  padding: 119px;
+}
+.footer__item {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer__logo {
+  flex-basis: 50%;
+}
+
+.footer__nav {
+  flex-basis: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer__menu-title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+
+.footer__menu-link {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+
+.footer__menu-link:hover,
+.footer__menu-link:focus,
+.footer__menu-link:active {
+  opacity: .75;
 }
