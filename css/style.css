@@ -498,11 +498,13 @@ body {
 .wrapper {
   max-width: 1060px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 .wrapper-lg {
   max-width: 1262px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 .section-title {
@@ -571,6 +573,35 @@ body {
 .header__link:focus,
 .header__link:active {
   opacity: 0.75;
+}
+
+.header__burger {
+  display: none;
+  width: 40px;
+  height: 28px;
+  position: relative;
+}
+
+.burger__line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #ffffff;
+  position: absolute;
+  left: 0;
+}
+
+.burger__line--first {
+  top: 0;
+}
+
+.burger__line--second {
+  top: 50%;
+  transform: translateY(-50%); /*поднять вверх на половину высоты элемента*/
+}
+
+.burger__line--third {
+  bottom: 0;
 }
 
 .intro {
@@ -669,7 +700,7 @@ body {
 .benefits__cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 55px;
+  column-gap: 55px;
   padding: 0 100px;
 }
 
@@ -837,6 +868,10 @@ body {
   margin-bottom: 85px;
 }
 
+.tour__thumb {
+  max-width: 100%;
+}
+
 .tour__text {
   font-size: 16px;
   line-height: 24px;
@@ -868,18 +903,23 @@ body {
 
 .top__cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 57px;
 }
 
 .top__card {
   display: flex;
   flex-direction: column;
+  grid-column: span 2;
 }
 
 .top__card-pic {
   position: relative;
   margin-bottom: 45px;
+}
+
+.top__card-thumb {
+  max-width: 100%;
 }
 
 .top__card-stats {
@@ -976,11 +1016,11 @@ body {
 }
 
 .footer__logo {
-  flex-basis: 50%;
+  width: 50%;
 }
 
 .footer__nav {
-  flex-basis: 50%;
+  width: 50%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -1005,4 +1045,274 @@ body {
 .footer__menu-link:focus,
 .footer__menu-link:active {
   opacity: .75;
+}
+
+@media screen and (max-width: 960px) {
+  .search-form__field {
+    margin-bottom: 25px;
+  }
+
+  .benefits {
+    margin-bottom: 75px;
+  }
+
+  .benefits__wrap {
+    box-shadow: none;
+  }
+
+  .benefits__title {
+    padding: 55px 15px;
+  }
+
+  .benefits__cards {
+    padding: 0 15px;
+    column-gap: 35px;
+  }
+
+  .benefits__card {
+    margin-bottom: 60px;
+  }
+
+  .places__card--large {
+    grid-column: span 6;
+  }
+
+  .places__card--small {
+    grid-column: span 6;
+  }
+
+  .tours__tour {
+    column-gap: 35px;
+  }
+
+  .tour__info {
+    padding-left: 0px;
+  }
+  .tour__title {
+    margin-bottom: 35px;
+  }
+
+  .tour__text {
+    margin-bottom: 35px;
+  }
+
+  .top__cards {
+    column-gap: 25px;
+    row-gap: 55px;
+  }
+
+  .top__card {
+    grid-column: span 3;
+  }
+
+  .top__card-pic {
+    margin-bottom: 25px;
+  }
+
+  .top__card-stats {
+    max-width: 386px;
+  }
+
+  .footer {
+    padding: 60px;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .section-title {
+    margin-bottom: 25px;
+  }
+
+  .section-title::after {
+    width: 78px;
+  }
+
+  .header__wrapper {
+    padding-top: 28px;
+  }
+
+  .header__burger {
+    display: block;
+  }
+
+  .header__nav {
+    width: 100%; /*займет всю ширину экрана, т.к. position: fixed*/
+    height: 100%; /*займет всю высоту экрана, т.к. position: fixed*/
+    position: fixed; /*fixed делает позиционирование относительно ЭКРАНА (!!!)*/
+    top: 0;
+    left: 0;
+    background:#000;
+    z-index: 10;
+    padding: 75px; /*чтобы контент не прилипал к краям экрана*/
+    transform: translateX(100%); /*чтобы наше меню по умолчанию было спрятано (уезжало вправо на свою ширину)*/
+    transition: .2s all linear;
+  }
+
+  .header__nav--active {
+    transform: translateX(0%);
+  }
+
+  .header__nav-close {
+    width: 40px;
+    height: 40px;
+    position: absolute; /*относительно родителя - блока nav*/
+    top: 20px;
+    right: 20px;
+    z-index: 11;
+  }
+
+  .header__nav-close-line {
+    display: block;
+    width: 100%; /*обязательно задаем, чтобы сработал transform*/
+    height: 2px;
+    background: #ffffff;
+    position: absolute;
+    top: 50%;
+  }
+
+  .header__nav-close-line:first-child {
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .header__nav-close-line:last-child {
+    transform: translateY(-50%) rotate(-45deg);
+  }
+
+  .header__item {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .header__item:last-child {
+    margin-bottom: 0;
+  }
+
+  .header__link {
+    font-size: 42px;
+    line-height: 48px;
+  }
+
+  .intro {
+    padding-top: 125px;
+  }
+
+  .intro__title {
+    font-size: 32px;
+    line-height: 48px;
+  }
+  .intro__subtitle {
+    font-size: 14px;
+  }
+
+  .search-form__field {
+    margin-right: 0;
+    width: 100%;
+    padding-bottom: 12px;
+    background: transparent url(../img/svg/circle-icon.svg) no-repeat left 2px;
+  }
+
+  .search-form__field::placeholder {
+    font-size: 16px;
+  }
+
+  .benefits {
+    margin-bottom: 36px;
+  }
+
+  .benefits__card {
+    grid-column: span 3;
+    margin-bottom: 40px;
+  }
+
+  .benefits__card-pic {
+    margin-bottom: 20px;
+  }
+
+  .benefits__card-title {
+    margin-bottom: 12px;
+  }
+
+  .benefits__card-text {
+    margin-bottom: 35px;
+  }
+
+  .places {
+    margin-bottom: 76px;
+  }
+
+  .places__view-all {
+    margin-bottom: 25px;
+  }
+
+  .places__caption {
+    margin-bottom: 0;
+  }
+
+  .places__card-pic--lg, 
+  .places__card-pic--sm {
+    height: 230px;
+  }
+
+  .tours {
+    margin-bottom: 76px;
+  }
+
+  .tours__tour {
+    margin-bottom: 40px;
+  }
+
+  .tour__pic,
+  .tour__info {
+    grid-column: span 2;
+  }
+
+  .tour__pic {
+    margin-bottom: 12px;
+  }
+
+  .tour__pic--mob-first {
+    grid-row-start: -1;
+  }
+
+  .top {
+    margin-bottom: 76px;
+  }
+
+  .top__card {
+    grid-column: span 6;
+  }
+
+  .top__card-text {
+    margin-bottom: 16px;
+  }
+
+  .footer__logo {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+
+  .footer__nav {
+    width: 100%;
+  }
+
+  .footer__menu {
+    margin-bottom: 24px;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  .header__nav {
+    padding: 75px 30px;
+  }
+
+  .search-form__field:nth-child(2) {
+    margin-bottom: 32px;
+  }
+
+  .search-form__submit {
+    width: 100%;
+  }
 }
